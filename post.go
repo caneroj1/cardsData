@@ -16,7 +16,7 @@ func PostToDB() {
 		os.Exit(1)
 	}
 
-	postURL := "http://localhost:9000/card"
+	postURL := "http://localhost:9000/api/cards"
 	fmt.Printf("POSTING to %s\n", postURL)
 	for _, arg := range os.Args[2:] {
 		fmt.Printf("\t- %s\n", arg)
