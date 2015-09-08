@@ -36,9 +36,9 @@ func PostToDB() {
 
 	var client http.Client
 	data := make(url.Values)
-	data["cardBody"] = []string{body}
-	data["cardType"] = []string{cardType}
-	data["cardBlanks"] = []string{blanks}
+	data["CardBody"] = []string{body}
+	data["CardType"] = []string{cardType}
+	data["CardBlanks"] = []string{blanks}
 	resp, err := client.PostForm(postURL, data)
 
 	if err != nil {
@@ -48,12 +48,6 @@ func PostToDB() {
 	code := resp.StatusCode
 	fmt.Printf("Status: %d\n", code)
 	fmt.Println(readBody(resp.Body))
-
-	// if code == 200 {
-	// 	fmt.Println(readBody(resp.Body))
-	// } else {
-	// 	fmt.Println(readErrors(resp.Cookies()))
-	// }
 }
 
 func readBody(body io.ReadCloser) string {
