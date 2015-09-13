@@ -39,6 +39,7 @@ func PostToDB() {
 	data["CardBody"] = []string{body}
 	data["CardType"] = []string{cardType}
 	data["CardBlanks"] = []string{blanks}
+	data["CreatorID"] = []string{string(1)}
 	resp, err := client.PostForm(postURL, data)
 
 	if err != nil {
